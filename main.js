@@ -8,7 +8,7 @@ function getRandomColor() {
         let randfour = colors[Math.floor(Math.random() * colors.length)];
         let randfive = colors[Math.floor(Math.random() * colors.length)];
         let randsix = colors[Math.floor(Math.random() * colors.length)];
-        let  randomHexCode =  randone + randtwo + randthree + randfour + randfive + randsix;
+        let  randomHexCode = '#'+  randone + randtwo + randthree + randfour + randfive + randsix;
         console.log(randomHexCode)
         
 
