@@ -8,23 +8,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="etch"><h2>Etch-a-Sketch</h2></div>
   <div class="container">
     <a href="#" class="myButton" id="random">Random</a> 
     <a href="#" class="myButton " id="black" >Black</a> 
-    <a href="#" class="myButton erase"id="eraser" >Eraser</a> 
+    <a href="#" class="myButton "id="eraser" >Eraser</a> 
     <a href="#" class="myButton " id="pick">Pick<input id="colorPicker" type="color" value="#605C3C">
       </a> 
     <a href="#" class="myButton " id="incdark">Darken</a> 
     <a class="clearBtn myButton">Clear</a>
 
   </div>
-  <div class="etch"><h2>Etch-a-Sketch</h2></div>
+
   <div class="rangeSlider">
     <span class="pixelSize">Pixel Density</span>
-    <input type="range" min="4" max="16"  step ="4" value="16" class="slider"   id="myRange">
+    <input type="range" min="4" max="16"  step ="2" value="16" class="slider"   id="myRange">
     <span class="rangeValue">Max</span>
   </div>
-  <div class="dbox"></div>
+  
+    <div  id="drowingBox">
+      <div class="dbox"></div>
+    </div>
+
+ 
+
 
 
   

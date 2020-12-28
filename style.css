@@ -45,13 +45,20 @@ body{
 	background-color:rgb(235, 229, 229);
 }
 
-.dbox{
+#drowingBox{
+	
 	grid-area:2/2/3/3 ;
 	background-color: #fff;
 	box-shadow:inset 6px 6px 5px 2px #000, 6px 6px 5px 2px #000;
 	border-radius:8px;
 	border:1px solid #ecf2f5;
 }
+.dbox{
+	height: 100%;
+	width: auto;
+	margin: 0.4rem 0px 0px 0.4rem;
+}
+
 .etch{
 	color:#0e0c0c;
 	grid-area: 1/2/2/3;
@@ -107,14 +114,5 @@ input[type='range'] {
   .pixelSize{
 	margin: 0px auto 0px 0px;
   }
-  .dbox{
-	  display: grid;
-	  grid-template-columns: repeat(auto, minmax());
-	  grid-template-rows: repeat(auto, minmax());
-  }
- .rows, .columns{
-	  display: flex;
-	  border:1px solid #000;
 
-	  
-  }
+  

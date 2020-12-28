@@ -1,28 +1,40 @@
-
-let random = document.getElementById('random');
-let myRange= document.getElementById('myRange');
-let black = document.getElementById('black');
-let eraser = document.getElementById('eraser');
-let incrementD = document.getElementById('incdark');
-let colorPicker= document.getElementById('pick');
+//buttons
+let randomBtn= document.getElementById('random');
+let blackBtn = document.getElementById('black');
+let eraserBtn = document.getElementById('eraser');
+let incrementBtn = document.getElementById('incdark');
+let colorPickerBtn= document.getElementById('pick');
+let clearBtn= document.getElementById('pick');
+//the grid where the divs will be generated
 let drowingBoard = document.querySelector(".dbox");
 
-//console.log(myRange);
+let myRange= document.getElementById('myRange');
+
+
+//geting a value from the range slider
 let rangeValue =document.querySelector('.rangeValue');
- myRange.addEventListener('input', () =>{
-    console.log(myRange.value)
-    rangeValue.innerHTML = myRange.value;
-    if(myRange.value ==16){ 
-        rangeValue.textContent = 'Max'};
-    for( c =0; c < myRange.value; c++){
-        let column = document.createElement('div');
-        let row = document.createElement('div');
-        drowingBoard.appendChild(column).classList.toggle('colums');
-        drowingBoard.appendChild(row).classList.toggle('rows');
-    }
-
+let gridNumber = 16;
+myRange.addEventListener('input', () =>{
+    gridNumber = myRange.value;
+    rangeValue.innerHTML = gridNumber;
+    console.log(gridNumber)
+    creatGridCells(gridNumber)
 });
+// take the value the range slider and feed it to this fnction to creat gris cells 
+function creatGridCells(){ 
 
+    if(gridNumber ==16){ 
+        rangeValue.textContent = 'Max'};
+       for( i=0; i < (gridNumber*gridNumber); i++){
+        let gridCells = document.createElement('div');
+        drowingBoard.appendChild(gridCells).classList.add('gridCells');
+        drowingBoard.style.cssText = `display: grid; grid-template-columns: repeat( ${gridNumber*gridNumber}, 1fr);
+                                       display: grid; grid-template-rows: repeat( ${gridNumber*gridNumber}, 1fr);`
+                                       
+       }
+
+};
+ // generating a random hexcode color, will invoked when randombtn is klicked
 function getRandomColor() {
     colors = new Array("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F");
     let randone = colors[Math.floor(Math.random() * colors.length)];
@@ -32,7 +44,11 @@ function getRandomColor() {
         let randfive = colors[Math.floor(Math.random() * colors.length)];
         let randsix = colors[Math.floor(Math.random() * colors.length)];
         let  randomHexCode = '#'+  randone + randtwo + randthree + randfour + randfive + randsix;
-        console.log(randomHexCode)
+         return randomHexCode
         
-}getRandomColor();
-console.log(myRange.value)
+}
+
+// setting grid celss to 16*16 as the defult
+creatGridCells(gridNumber);
+let gridCellsOnHover = document.querySelectorAll('gridCells');
+
