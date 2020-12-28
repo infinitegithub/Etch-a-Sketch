@@ -63,12 +63,12 @@ body{
 	display: flex;
 	object-fit: contain;
 	justify-content: center;
-
-	  margin: 1rem;
+	align-items: center;
+	margin-top: 1rem;
 }
 input[type='range'] {
 	-webkit-appearance: none;
-	max-width: 20rem;
+	max-width: 14rem;
 	width: 100%;
 	background: transparent;
 	margin: 0;
@@ -99,4 +99,22 @@ input[type='range'] {
 	  margin: 0px;
 	 box-shadow:inset 2px -2px 5px rgb(43, 38, 38);
 	  border:1px solid #ecf2f5;
+  }
+  span{
+	text-shadow:3px -2px 10px #fff;
+	margin-left: 1rem;
+  }
+  .pixelSize{
+	margin: 0px auto 0px 0px;
+  }
+  .dbox{
+	  display: grid;
+	  grid-template-columns: repeat(auto, minmax());
+	  grid-template-rows: repeat(auto, minmax());
+  }
+ .rows, .columns{
+	  display: flex;
+	  border:1px solid #000;
+
+	  
   }
