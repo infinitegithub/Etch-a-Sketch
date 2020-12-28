@@ -9,18 +9,26 @@
 </head>
 <body>
   <div class="container">
-  <a href="#" class="myButton" id="random">Random</a> 
-  <a href="#" class="myButton " id="black" >Black</a> 
-  <a href="#" class="myButton erase"id="eraser" >Eraser</a> 
-  <a href="#" class="myButton " id="pick">Pick</a> 
-  <a href="#" class="myButton " id="incdark">Darken</a> 
-</div>
- <div class="etch"><h2>Etch-a-Sketch</h2></div>
-  <div class="slider"></div>
+    <a href="#" class="myButton" id="random">Random</a> 
+    <a href="#" class="myButton " id="black" >Black</a> 
+    <a href="#" class="myButton erase"id="eraser" >Eraser</a> 
+    <a href="#" class="myButton " id="pick">Pick<input id="colorPicker" type="color" value="#605C3C">
+      </a> 
+    <a href="#" class="myButton " id="incdark">Darken</a> 
+    <a class="clearBtn myButton">Clear</a>
+
+  </div>
+  <div class="etch"><h2>Etch-a-Sketch</h2></div>
+  <div class="rangeSlider">
+    <input type="range" min="16" max="100"  step ="16" value="100" class="slider"   id="myRange">
+    <span class="rangeValue"></span>
+  </div>
   <div class="dbox"></div>
+
+
   
  
-    <script src="main.js"></script>
+ <script src="main.js"></script>
    
 </body>
 </html>
