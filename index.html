@@ -1,42 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etch-a-Sketch</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etch-a-Sketch</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="etch"><h2>Etch-a-Sketch</h2></div>
+  <div class="etch">
+    <h2>Etch-a-Sketch</h2>
+  </div>
   <div class="container">
-    <a href="#" class="myButton" id="random">Random</a> 
-    <a href="#" class="myButton " id="black" >Black</a> 
-    <a href="#" class="myButton "id="eraser" >Eraser</a> 
+    <a href="#" class="myButton" id="random">Random</a>
+    <a href="#" class="myButton " id="black">Black</a>
+    <a href="#" class="myButton " id="eraser">Eraser</a>
     <a href="#" class="myButton " id="pick">Pick<input id="colorPicker" type="color" value="#605C3C">
-      </a> 
-    <a href="#" class="myButton " id="incdark">Darken</a> 
+    </a>
+    <a href="#" class="myButton " id="incdark">Darken</a>
     <a class="clearBtn myButton">Clear</a>
 
   </div>
 
   <div class="rangeSlider">
     <span class="pixelSize">Pixel Density</span>
-    <input type="range" min="4" max="16"  step ="2" value="16" class="slider"   id="myRange">
+    <input type="range" min="8" max="32" step="4" value="32" class="slider" id="myRange">
     <span class="rangeValue">Max</span>
   </div>
-  
-    <div  id="drowingBox">
-      <div class="dbox"></div>
-    </div>
 
- 
+  <div id="drowingBox">
+    <div class="dbox"></div>
+  </div>
 
 
 
-  
- 
- <script src="main.js"></script>
-   
+
+
+
+
+  <script src="main.js"></script>
+
 </body>
+
 </html>

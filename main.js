@@ -14,7 +14,7 @@ let color = '#000000';
 
 //geting a value from the range slider
 let rangeValue = document.querySelector('.rangeValue');
-let gridNumber = 16;
+let gridNumber = 32;
 myRange.addEventListener('input', () => {
     gridNumber = myRange.value;
     rangeValue.innerHTML = gridNumber;
@@ -24,14 +24,14 @@ myRange.addEventListener('input', () => {
 // take the value the range slider and feed it to this fnction to creat gris cells 
 function creatGridCells() {
 
-    if (gridNumber == 16) {
+    if (gridNumber == 32) {
         rangeValue.textContent = 'Max'
     };
-    for (i = 0; i < (gridNumber ** 4); i++) {
+    for (i = 0; i < (gridNumber ** 2); i++) {
         let gridCells = document.createElement('div');
         drowingBoard.appendChild(gridCells).classList.add('gridCells');
-        drowingBoard.style.cssText = ` display: grid; grid-template-columns: repeat( ${gridNumber ** 2}, 1fr);
-          grid-template-rows:repeat( ${gridNumber ** 2}, 1fr);`
+        drowingBoard.style.cssText = ` display: grid; grid-template-columns: repeat( ${gridNumber}, 1fr);
+          grid-template-rows:repeat( ${gridNumber}, 1fr);`
 
     }
     let gridCellsOnHover = drowingBoard.querySelectorAll('div');
@@ -40,7 +40,7 @@ function creatGridCells() {
 };
 // generating a random hexcode color, will invoked when randombtn is klicked
 
-function getRandomColor(color) {
+function getRandomColor() {
     colors = new Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F");
     let randone = colors[Math.floor(Math.random() * colors.length)];
     let randtwo = colors[Math.floor(Math.random() * colors.length)];
@@ -64,14 +64,21 @@ creatGridCells(gridNumber);
 //gridCellsOnHover.forEach(gridCells => gridCells.addEventListener('mouseover', clearButton))
 //};
 
-function clearButton() {
+function randomColorBnt() {
+
     let containedCells = drowingBoard.querySelectorAll('div');
-    containedCells.forEach(gridCells => gridCells.style.cssText = 'background-color: #ffffff;');
-    console.log(containedCells)
+    containedCells.forEach(gridCell => gridCell.addEventListener('mouseover', () => {
+        color = getRandomColor();
+
+        gridCell.style.backgroundColor = `${color}`
+    }));
+    //console.log(containedCells)
 }
 //clearButton();
 
 
 // 
 //drowingBoard.addEventListener('mouseover', colorGridCells);
+// eventListner on ClrearBnt
 
+randomBtn.addEventListener('click', randomColorBnt);
