@@ -4,7 +4,7 @@ let blackBtn = document.getElementById('black');
 let eraserBtn = document.getElementById('eraser');
 let incrementBtn = document.getElementById('incdark');
 let colorPickerBtn = document.getElementById('pick');
-let clearBtn = document.getElementById('pick');
+let clearBtn = document.querySelector('.clearBtn');
 //the grid where the divs will be generated
 let drowingBoard = document.querySelector(".dbox");
 
@@ -14,17 +14,19 @@ let color = '#000000';
 
 //geting a value from the range slider
 let rangeValue = document.querySelector('.rangeValue');
-let gridNumber = 32;
+let gridNumber = 100;
+
 myRange.addEventListener('input', () => {
+
     gridNumber = myRange.value;
     rangeValue.innerHTML = gridNumber;
-    console.log(gridNumber)
-    creatGridCells(gridNumber)
+    creatGridCells(gridNumber);
+
 });
 // take the value the range slider and feed it to this fnction to creat gris cells 
 function creatGridCells() {
 
-    if (gridNumber == 32) {
+    if (gridNumber == 100) {
         rangeValue.textContent = 'Max'
     };
     for (i = 0; i < (gridNumber ** 2); i++) {
@@ -54,7 +56,7 @@ function getRandomColor() {
 }
 getRandomColor();
 
-console.log(randomColor);
+
 
 // setting grid celss to 16*16 as the defult
 creatGridCells(gridNumber);
@@ -91,8 +93,18 @@ function erassebutton() {
 
 }
 
+function pickColour(e) {
+    let containedCells = drowingBoard.querySelectorAll('div');
+    containedCells.forEach(gridCell => gridCell.addEventListener('mouseover', () => {
+        color = e.target.value;
+        gridCell.style.backgroundColor = `${color}`
+    }));
 
-
+}
+function resetdrowingboard() {
+    let containedCells = drowingBoard.querySelectorAll('div');
+    containedCells.forEach(gridCell => gridCell.style.backgroundColor = '#ffffff');
+}
 
 
 
@@ -101,3 +113,5 @@ function erassebutton() {
 blackBtn.addEventListener('click', blackButton);
 eraserBtn.addEventListener('click', erassebutton);
 randomBtn.addEventListener('click', randomColorBnt);
+colorPickerBtn.addEventListener('input', pickColour)
+clearBtn.addEventListener('click', resetdrowingboard);
