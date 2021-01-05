@@ -54,7 +54,8 @@ body{
 	border:1px solid #ecf2f5;
 }
 .dbox{
-	display: grid;
+    display: grid;
+	
 	height: 100%;
 	width: auto;
 	margin: 0.4rem 0px 0px 0.4rem;
