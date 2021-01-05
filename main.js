@@ -59,10 +59,7 @@ console.log(randomColor);
 // setting grid celss to 16*16 as the defult
 creatGridCells(gridNumber);
 
-//function colorGridCells() {
 
-//gridCellsOnHover.forEach(gridCells => gridCells.addEventListener('mouseover', clearButton))
-//};
 
 function randomColorBnt() {
 
@@ -72,13 +69,35 @@ function randomColorBnt() {
 
         gridCell.style.backgroundColor = `${color}`
     }));
-    //console.log(containedCells)
+
+};
+function blackButton() {
+
+    let containedCells = drowingBoard.querySelectorAll('div');
+    containedCells.forEach(gridCell => gridCell.addEventListener('mouseover', () => {
+        gridCell.style.backgroundColor = '#000000';
+    }));
+
+};
+
+function erassebutton() {
+
+    let containedCells = drowingBoard.querySelectorAll('div');
+    containedCells.forEach(gridCell => gridCell.addEventListener('mouseover', () => {
+
+
+        gridCell.style.backgroundColor = '#ffffff';
+    }));
+
 }
-//clearButton();
 
 
-// 
-//drowingBoard.addEventListener('mouseover', colorGridCells);
-// eventListner on ClrearBnt
 
+
+
+
+
+// event listners for the buttons 
+blackBtn.addEventListener('click', blackButton);
+eraserBtn.addEventListener('click', erassebutton);
 randomBtn.addEventListener('click', randomColorBnt);
